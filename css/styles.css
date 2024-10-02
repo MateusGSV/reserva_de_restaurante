@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  #app {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  input, button {
+    margin: 5px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  

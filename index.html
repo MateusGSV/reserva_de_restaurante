@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MVC com JavaScript e Rotas</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Página inicial</h1>
-    <h2>Isso é um H2</h2>
+  <nav>
+    <ul>
+      <li><a href="#/">Home</a></li>
+      <li><a href="#/about">Sobre</a></li>
+      <li><a href="#/tasks">Tarefas</a></li>
+    </ul>
+  </nav>
+
+  <div id="app"></div> <!-- Aqui carregaremos as views dinamicamente -->
+
+  <script src="js/router.js"></script>
+  <script src="js/model.js"></script>
+  <script src="js/view.js"></script>
+  <script src="js/controller.js"></script>
 </body>
 </html>
