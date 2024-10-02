@@ -32,7 +32,11 @@ class Router {
   // Definição das rotas
   const routes = {
     '/': {
-      view: 'views/home.html'
+      view: 'views/home.html',
+      controller: ()=>{
+        document.getElementById('tag-link-style').href="css/home.css";
+        document.getElementById('tag-title').innerHTML="Home";
+      }
     },
     '/about': {
       view: 'views/about.html'
