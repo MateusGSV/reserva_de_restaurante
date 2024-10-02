@@ -44,7 +44,10 @@ class Router {
         const view = new TaskView();
         const controller = new TaskController(model, view);
         controller.init();  // Método para iniciar a página de tarefas
-      }
+      },
+    },
+    '/adm':{
+        view: 'views/administrador.html',
     }
   };
   
