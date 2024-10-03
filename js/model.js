@@ -1,24 +1,21 @@
+//import { db } from './firebase-config.js';
 class TaskModel {
-    constructor() {
-      this.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    }
-  
-    getTasks() {
-      return this.tasks;
-    }
-  
-    addTask(task) {
-      this.tasks.push(task);
-      this._commit();
-    }
-  
-    deleteTask(index) {
-      this.tasks.splice(index, 1);
-      this._commit();
-    }
-  
-    _commit() {
-      localStorage.setItem('tasks', JSON.stringify(this.tasks));
-    }
+  constructor() {
+    this.collection = db.collection('tasks');
   }
-  
+
+  async getTasks() {
+    const snapshot = await this.collection.get();
+    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  }
+
+  async addTask(task) {
+    await this.collection.add({ title: task });
+  }
+
+  async deleteTask(id) {
+    await this.collection.doc(id).delete();
+  }
+}
+
+//export default TaskModel;
